@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
+
+<h1>Cálculo de frete dos correios by Rossi!</h1>
+<h3>Consultas testes: </h3>
+
+<ul> 
+  {% for todo_item in all_items %}
+    <li>O valor para o cep {{ todo_ceps.content }} é: {{ todo_item.content }}
+    <form action="/deleteTodo/{{todo_item.id}}/" 
+    style="display: inline;"
+    method="post">{% csrf_token %}
+      <input type="submit" value="Deletar"/>
+    </form>
+    </li>
+  {% endfor %}
+</ul>
+
+<form action="/addTodo/" method="post">{% csrf_token %}
+  <input type="text" name="contents"/>
+  <input type="submit" value="Adiciona CEP"/>
+  <li>O valor para o cep {{ todo_cep.content }} é
+  </li>
+
+</form>
