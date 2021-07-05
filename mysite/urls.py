@@ -23,6 +23,6 @@ urlpatterns = [
     path('addTodo/', addTodo),
     path('deleteTodo/<int:todo_id>/', deleteTodo),
     path('app.png', coverImage),
-    path('addCep/', addCep),
+   # path('addCep/', addCep),
 
 ]
