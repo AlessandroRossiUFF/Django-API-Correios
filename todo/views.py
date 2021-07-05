@@ -14,20 +14,20 @@ def todoView(request):
   if (first_time):
      # new_item = TodoItem(content = "build a cool app on replit.com")
      # new_item.save()
-      novo_item = TodoCep(content = "risos")
+     # novo_item = TodoCep(content = "risos")
      # new_item.save()
       first_time = False
   return render(request, 'index.html', 
   {'all_items': all_todo_items})
 
-def todoCeps(request):
+def cepView(request):
   global first_time
   all_todo_ceps = TodoCep.objects.all()
   if (first_time):
      # new_item = TodoItem(content = "build a cool app on replit.com")
      # new_item.save()
       novo_item = TodoCep(content = "risos")
-     # new_item.save()
+      novo_item.save()
       first_time = False
   return render(request, 'index.html', 
   {'all_ceps': all_todo_ceps})
@@ -58,6 +58,8 @@ def addTodo(request):
  # new_cpf = TodoCPF(content = request.POST['content'])
  # new_item = TodoItem(content = dados_cep['logradouro'])
   new_item.save()
+  price=TodoItem(content = txt)
+  price.save()
   return HttpResponseRedirect('/')
 
 

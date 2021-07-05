@@ -5,7 +5,7 @@
 
 <ul> 
   {% for todo_item in all_items %}
-    <li>O valor para o cep {{ todo_ceps.content }} é: {{ todo_item.content }}
+    <li>O valor para o cep  é: {{ todo_item.content }}
     <form action="/deleteTodo/{{todo_item.id}}/" 
     style="display: inline;"
     method="post">{% csrf_token %}
@@ -18,7 +18,6 @@
 <form action="/addTodo/" method="post">{% csrf_token %}
   <input type="text" name="contents"/>
   <input type="submit" value="Adiciona CEP"/>
-  <li>O valor para o cep {{ todo_cep.content }} é
+  <li>O valor para o cep {{ 7 }} é: {{ todo_item.content }}
   </li>
-
 </form>
